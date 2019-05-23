@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-var horrorStuff = ["Friday the 13th", "Cabin in the Woods", "Slither", "Halloween", "Evil Dead", "Phantasm", "Nightmare on Elm Street"];
+var horrorStuff = ["Silent Hill", "Cabin in the Woods", "Tucker and Dale vs Evil", "Halloween", "Evil Dead", "Phantasm", "The Babadook", "Thirteen Ghosts"];
 
 
 function makeButtons() {
@@ -36,8 +36,8 @@ function makeButtons() {
                     horrorImg.attr("src", results[i].images.fixed_height_still.url);
                     horrorImg.attr("data-state", "still");
                     horrorImg.addClass("gif");
-                    gifDiv.append(p);
                     gifDiv.append(horrorImg);
+                    gifDiv.append(p);
                     $("#gifsHere").prepend(gifDiv);
                 }
 

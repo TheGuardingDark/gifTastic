@@ -1,0 +1,40 @@
+
+
+body {
+    background: url(skulls.jpg);
+}
+
+#buttonsHere {
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+button {
+    margin: 5px;
+    background: #ffa500;
+    color: #000000;
+    border-radius: 10px;
+}
+
+p {
+    position: relative;
+    left: 136px;
+    margin: 10px;
+    font-size: 23px;
+    font-display: bold;
+}
+
+
+img {
+    margin: 5px;
+}
+
+label {
+    font-size: larger;
+    font-weight: 800;
+    color: #ffa500;
+}
+
+#add-horror {
+    margin-top: 12px;
+}
