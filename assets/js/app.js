@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
-var horrorStuff = ["Silent Hill", "Cabin in the Woods", "Tucker and Dale vs Evil", "Halloween", "Evil Dead", "Phantasm", "The Babadook", "Thirteen Ghosts"];
+var horrorStuff = ["Silent Hill", "Cabin in the Woods", "Tucker and Dale vs Evil", "Halloween", "Evil Dead", "Poltergeist", "The Babadook", "Thirteen Ghosts", "The Ring"];
 
+var limit = 10;
 
 function makeButtons() {
     $("#buttonsHere").empty();
@@ -17,7 +18,11 @@ function makeButtons() {
         // console.log("I work");
         $("#gifsHere").empty();
         var name = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=DrOwP7rdNFPPf0xwpmQKJNw9HmfY0Oa3&limit=10";
+        limit = $("#limitNum").val().trim();
+           if(limit ==="") {
+               limit = 10;
+           }
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=DrOwP7rdNFPPf0xwpmQKJNw9HmfY0Oa3&limit=" + limit;
 
         $.ajax({
             url: queryURL,
@@ -42,7 +47,7 @@ function makeButtons() {
                 }
 
                 $(".gif").on("click", function() {
-                    console.log("I work")
+                    // console.log("I work")
                    var state = $(this).attr("data-state");
                        if(state === "still") {
                            $(this).attr("src", $(this).attr("data-animate"));
@@ -60,10 +65,13 @@ function makeButtons() {
 $("#add-horror").on("click", function(event) {
     event.preventDefault();
     var horror = $("#horror-input").val().trim();
+    if(horror === "") {
+        return(horror)
+    }else {
     horrorStuff.push(horror);
     makeButtons();
     $("#horror-input").val("");
-});
+}});
 
 
 makeButtons();
